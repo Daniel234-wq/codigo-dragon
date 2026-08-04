@@ -1,13 +1,7 @@
+package ejercicios_java;
+
 import java.util.Scanner;
 
-/*
- * NIVEL 5 - EL SALON DE LA FAMA
- * Mision 5.1: El analisis de la temporada
- *
- * Datos de prueba: 450, 200, 780, 300, 150, 900, 620, 380, 210, 540, 700, 480
- * Verificacion: total = 5710 - promedio ~= 475.83 - mejor = mes 6 (900)
- *               peor = mes 5 (150) - sobre el promedio = 6
- */
 public class AnalisisTemporada {
     public static void main(String[] args) {
 

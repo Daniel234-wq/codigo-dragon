@@ -1,12 +1,8 @@
+package ejercicios_java;
+
 import java.util.Scanner;
 
-/*
- * NIVEL 4 - EL INVENTARIO
- * Mision 4.1: La bitacora de la mazmorra
- *
- * Datos de prueba: 45, 0, 120, 30, 0, 75, 10
- * Resultado esperado: total = 280, salas vacias = 2
- */
+
 public class BitacoraMazmorra {
     public static void main(String[] args) {
 

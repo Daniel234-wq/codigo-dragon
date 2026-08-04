@@ -1,13 +1,8 @@
+package ejercicios_java;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-/*
- * NIVEL 1 - LA CREACION DEL HEROE
- * Mision 1.1: El registro del gremio
- *
- * Datos de prueba: Kael Tormenta de Hierro, 17, 120, 18, 9, 300.0, Guerrero
- * Resultado esperado: Poder = 72 - Nivel = 12 - Oro restante = 250.0
- */
 public class RegistroGremio {
     public static void main(String[] args) {
 

@@ -1,16 +1,9 @@
+package ejercicios_java;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-/*
- * NIVEL 2 - EL CAMINO SE BIFURCA
- * Mision 2.1: La tienda de pociones
- *
- * Datos de prueba: oro = 60, vida = 140, opcion = 2
- * Resultado esperado: compra realizada, oro = 10, vida = 150 (avisando "Vida al maximo")
- *
- * Se agrego un do-while para poder comprar varias veces hasta elegir "Salir",
- * ya que el propio menu incluye esa opcion.
- */
+
 public class TiendaPociones {
     public static void main(String[] args) {
 

@@ -1,24 +1,9 @@
+package ejercicios_java;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-/*
- * JEFE FINAL - "CODIGO DRAGON v1.0"
- * Proyecto integrador del taller.
- *
- * Reglas respetadas:
- * - Solo lo visto en el taller (sin constructores, sin metodos propios,
- *   sin ArrayList, sin herencia). Todo el codigo ejecutable va dentro de main.
- * - Textos comparados con .equals() / .equalsIgnoreCase(), nunca con ==.
- * - Todo indice que viene del usuario se valida antes de usarse.
- * - Ninguna division sin proteccion contra cero.
- * - La vida nunca queda negativa ni supera vidaMaxima.
- * - Si el usuario elige una opcion antes de crear el escuadron, se avisa
- *   en vez de reventar.
- * - sc.nextLine() de limpieza despues de cada nextInt()/nextDouble()
- *   que sea seguido de una lectura de texto.
- *
- * Requiere el archivo Personaje.java en la misma carpeta.
- */
+
 public class CodigoDragon {
     public static void main(String[] args) {
 

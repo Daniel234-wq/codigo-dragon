@@ -1,24 +1,7 @@
 import java.util.Locale;
 import java.util.Scanner;
 
-/*
- * JEFE FINAL - "CODIGO DRAGON v1.0"
- * Proyecto integrador del taller.
- *
- * Reglas respetadas:
- * - Solo lo visto en el taller (sin constructores, sin metodos propios,
- *   sin ArrayList, sin herencia). Todo el codigo ejecutable va dentro de main.
- * - Textos comparados con .equals() / .equalsIgnoreCase(), nunca con ==.
- * - Todo indice que viene del usuario se valida antes de usarse.
- * - Ninguna division sin proteccion contra cero.
- * - La vida nunca queda negativa ni supera vidaMaxima.
- * - Si el usuario elige una opcion antes de crear el escuadron, se avisa
- *   en vez de reventar.
- * - sc.nextLine() de limpieza despues de cada nextInt()/nextDouble()
- *   que sea seguido de una lectura de texto.
- *
- * Requiere el archivo Personaje.java en la misma carpeta.
- */
+
 public class CodigoDragon {
     public static void main(String[] args) {
 
@@ -80,8 +63,8 @@ public class CodigoDragon {
                         System.out.print("Defensa: ");
                         equipo[i].defensa = sc.nextInt();
 
-                        System.out.print("Bicho Coins inicial: ");
-                        equipo[i].bichoCoins = sc.nextDouble();
+                        System.out.print("Oro inicial: ");
+                        equipo[i].oro = sc.nextDouble();
                         sc.nextLine();
 
                         equipo[i].estaVivo = true;
@@ -108,7 +91,7 @@ public class CodigoDragon {
                                 + " | Vida " + equipo[i].vida + "/" + equipo[i].vidaMaxima
                                 + " | Ataque " + equipo[i].ataque
                                 + " | Defensa " + equipo[i].defensa
-                                + " | Bicho Coins " + equipo[i].bichoCoins
+                                + " | Oro " + equipo[i].oro
                                 + " | " + estado);
                     }
                 }
@@ -184,9 +167,9 @@ public class CodigoDragon {
                     } else {
                         System.out.println();
                         System.out.println("===== TIENDA =====");
-                        System.out.println("1. Pocion pequeña   (20 Bicho Coins, +30 vida)");
-                        System.out.println("2. Pocion grande     (50 Bicho Coins, +80 vida)");
-                        System.out.println("3. Elixir de fuerza   (120 Bicho Coins, +10 ataque)");
+                        System.out.println("1. Pocion pequeña   (20 oro, +30 vida)");
+                        System.out.println("2. Pocion grande     (50 oro, +80 vida)");
+                        System.out.println("3. Elixir de fuerza   (120 oro, +10 ataque)");
                         System.out.println("4. Salir de la tienda");
                         System.out.print("Opcion: ");
                         int compra = sc.nextInt();
@@ -212,11 +195,11 @@ public class CodigoDragon {
                         if (compra == 4) {
                             System.out.println("Sales de la tienda.");
                         } else if (compra >= 1 && compra <= 3) {
-                            if (equipo[idx].bichoCoins < precio) {
-                                double faltante = precio - equipo[idx].bichoCoins;
-                                System.out.println("Bicho Coins insuficiente. Te faltan " + faltante + " monedas.");
+                            if (equipo[idx].oro < precio) {
+                                double faltante = precio - equipo[idx].oro;
+                                System.out.println("Oro insuficiente. Te faltan " + faltante + " monedas.");
                             } else {
-                                equipo[idx].bichoCoins -= precio;
+                                equipo[idx].oro -= precio;
 
                                 if (compra == 1) {
                                     equipo[idx].vida += 30;
@@ -231,7 +214,7 @@ public class CodigoDragon {
                                     System.out.println("Vida al maximo.");
                                 }
 
-                                System.out.println("Compra realizada. Bicho Coins restante: " + equipo[idx].bichoCoins);
+                                System.out.println("Compra realizada. Oro restante: " + equipo[idx].oro);
                             }
                         }
                     }
@@ -241,14 +224,14 @@ public class CodigoDragon {
                 if (!escuadronCreado) {
                     System.out.println("Primero debes crear el escuadron (opcion 1).");
                 } else {
-                    double bichoCoinsTotal = 0;
+                    double oroTotal = 0;
                     int sumaVida = 0;
                     int posMasFuerte = 0;
                     int posMasDebil = 0;
                     int vivos = 0;
 
                     for (int i = 0; i < equipo.length; i++) {
-                        bichoCoinsTotal += equipo[i].bichoCoins;
+                        oroTotal += equipo[i].oro;
                         sumaVida += equipo[i].vida;
 
                         if (equipo[i].ataque > equipo[posMasFuerte].ataque) {
@@ -266,7 +249,7 @@ public class CodigoDragon {
 
                     System.out.println();
                     System.out.println("===== ESTADISTICAS DEL GREMIO =====");
-                    System.out.println("Bicho Coins total       : " + bichoCoinsTotal);
+                    System.out.println("Oro total       : " + oroTotal);
                     System.out.println("Vida promedio   : " + vidaPromedio);
                     System.out.println("Mas fuerte      : " + equipo[posMasFuerte].nombre
                             + " (ataque " + equipo[posMasFuerte].ataque + ")");
@@ -303,7 +286,7 @@ public class CodigoDragon {
                         System.out.println("Vida    : " + equipo[posicion].vida + "/" + equipo[posicion].vidaMaxima);
                         System.out.println("Ataque  : " + equipo[posicion].ataque);
                         System.out.println("Defensa : " + equipo[posicion].defensa);
-                        System.out.println("Bicho Coins     : " + equipo[posicion].bichoCoins);
+                        System.out.println("Oro     : " + equipo[posicion].oro);
                         System.out.println("Estado  : " + estado);
                     } else {
                         System.out.println("Ese heroe no pertenece al escuadron.");
@@ -315,16 +298,16 @@ public class CodigoDragon {
                 System.out.println("===== RESUMEN DE LA PARTIDA =====");
                 if (escuadronCreado) {
                     int vivosFinal = 0;
-                    double bichoCoinsFinal = 0;
+                    double oroFinal = 0;
                     for (int i = 0; i < equipo.length; i++) {
                         if (equipo[i].estaVivo) {
                             vivosFinal++;
                         }
-                        bichoCoinsFinal += equipo[i].bichoCoins;
+                        oroFinal += equipo[i].oro;
                     }
                     System.out.println("Heroes en el escuadron : " + equipo.length);
                     System.out.println("Heroes vivos           : " + vivosFinal);
-                    System.out.println("Bicho Coins total del gremio   : " + bichoCoinsFinal);
+                    System.out.println("Oro total del gremio   : " + oroFinal);
                 } else {
                     System.out.println("No llegaste a crear un escuadron.");
                 }

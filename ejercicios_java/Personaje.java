@@ -1,7 +1,6 @@
-/*
- * JEFE FINAL - CODIGO DRAGON v1.0
- * Clase Personaje: el molde para cada heroe del escuadron.
- */
+package ejercicios_java;
+
+
 public class Personaje {
     String nombre;
     String clase;

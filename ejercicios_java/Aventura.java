@@ -1,17 +1,9 @@
+package ejercicios_java;
+
 import java.util.Locale;
 import java.util.Scanner;
 
-/*
- * NIVEL 6 - EL NACIMIENTO DE LOS OBJETOS
- * Mision 6.1: La ficha completa del personaje
- *
- * Version que respeta estrictamente la regla del taller:
- * "NO uses metodos propios. Todo el codigo ejecutable va dentro de main."
- * Por eso la ficha se imprime igual las tres veces, en vez de usar un
- * metodo auxiliar (a costa de repetir codigo).
- *
- * Requiere el archivo Personaje.java en la misma carpeta.
- */
+
 public class Aventura {
     public static void main(String[] args) {
 

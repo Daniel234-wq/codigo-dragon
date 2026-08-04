@@ -1,13 +1,8 @@
+package ejercicios_java;
+
 import java.util.Scanner;
 
-/*
- * NIVEL 3 - COMBATE POR TURNOS
- * Mision 3.1: El torneo del gremio
- *
- * Secuencia de prueba sugerida: 1 -> 1 -> 3 -> 2 -> 1 -> 4
- * Bonus: cada 3 peleas ganadas aparece un jefe que quita 40 de vida
- * pero da 150 de oro (usa el operador %).
- */
+
 public class TorneoGremio {
     public static void main(String[] args) {
 
