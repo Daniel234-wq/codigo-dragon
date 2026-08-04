@@ -1,6 +1,5 @@
 package ejercicios_java;
 
-
 public class Personaje {
     String nombre;
     String clase;
@@ -9,7 +8,7 @@ public class Personaje {
     int vidaMaxima;
     int ataque;
     int defensa;
-    double oro;
+    double bichoCoins;
     boolean estaVivo;
     String arma;
     boolean esVenenoso;
